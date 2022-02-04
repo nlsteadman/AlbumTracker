@@ -9,8 +9,8 @@ Features
 MVP
 ---
 1 Home Page
-2 Create Albums
-3 List Albums
+2 List Albums
+3 Create Albums
 
 Stretch Goals
 ---
