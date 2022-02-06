@@ -14,13 +14,21 @@ const useStyles = makeStyles((theme) => ({
 const ListAlbums = ({ albums }) => {
     const classes = useStyles();
 
-    const albumCards = albums.map(album => <AlbumCard key={ album.id } album={ album } />)
-  return <div>
+    const albumCards = albums.map(album => 
+        <AlbumCard 
+            key={ album.id } 
+            album={ album } 
+            />
+    );
+
+  return (
+  <div>
       <h1>List Albums</h1>
       <List component="nav" aria-label="secondary mailbox folders">
           { albumCards }
       </List>
-  </div>;
+  </div>
+  );
 };
 
 export default ListAlbums;

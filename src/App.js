@@ -11,8 +11,6 @@ const App = () => {
 
   useEffect(() => {
 
-  
-
     const fetchAlbums = async () => {
       const response = await fetch(baseUrl + '/albums')
       const data = await response.json();
@@ -22,13 +20,18 @@ const App = () => {
     fetchAlbums();
   }, [])
 
+  const addNewAlbum = (newAlbum) => {
+    const updatedAlbums = [...albums, newAlbum]
+    setAlbums(updatedAlbums)
+  }
+
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/albums" element={<ListAlbums albums={albums} />} />
-        <Route path="/albums/new" element={<NewAlbum />} />
+        <Route path="/albums/new" element={<NewAlbum addNewAlbum={addNewAlbum} />} />
       </Routes>
     </Router>
   );
