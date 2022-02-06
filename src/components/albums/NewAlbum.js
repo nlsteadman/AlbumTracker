@@ -9,14 +9,15 @@ const NewAlbum = ({ addNewAlbum }) => {
             "album": "",
             "year": ""
         }
-    )
+    );
 
     const handleChange = (e) => {
         setState({ ...state, [e.target.name] : e.target.value})
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        e.target.reset();
         fetch(baseUrl + "/albums", {
             method: "POST",
             headers,
@@ -24,16 +25,17 @@ const NewAlbum = ({ addNewAlbum }) => {
         })
             .then(r => r.json())
             .then(data => addNewAlbum(state))
+            alert("Album added!");
     }
 
   return <div>
       <h1>New Album</h1>
-      <form onSubmit={handleSubmit}>
+        <form id="create-album-form" onSubmit={handleSubmit}>
           <input value={state.artist} onChange={handleChange} type="text" name="artist" placeholder="Artist name" />
           <input value={state.album} onChange={handleChange} type="text" name="album" placeholder="Album name" />
           <input value={state.year} onChange={handleChange} type="text" name="year" placeholder="Year" />
           <button type="submit">Add Album</button>
-      </form>
+        </form>
   </div>;
 };
 
