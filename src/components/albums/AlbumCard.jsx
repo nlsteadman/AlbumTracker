@@ -1,13 +1,15 @@
 import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-
 
 const AlbumCard = ({ album }) => {
   return (
-    <ListItem button>
-        <ListItemText primary={ album.artist } />
-    </ListItem>
+    <button>
+        <div id="album-info">
+          <img src={album.image} alt={album.album} />
+          <h2>{album.artist}</h2> 
+          <p>{album.album}</p>
+          <p>{album.year}</p>
+        </div>
+    </button>
   )
 };
 

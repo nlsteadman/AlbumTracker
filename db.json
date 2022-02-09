@@ -2,59 +2,69 @@
   "albums": [
     {
       "id": 1,
+      "image": "https://upload.wikimedia.org/wikipedia/en/4/4d/Tom_Petty_Full_Moon_Fever.jpg",
       "artist": "Tom Petty",
       "album": "Full Moon Fever",
       "year": "1989"
     },
     {
       "id": 2,
+      "image": "https://upload.wikimedia.org/wikipedia/en/5/58/BadBrainsIAgainstI.jpg",
       "artist": "Bad Brains",
       "album": "I Against I",
       "year": "1986"
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/en/f/f3/ATCQPeople%27sInstinctTravels.jpg",
       "artist": "A Tribe Called Quest",
       "album": "People's Instinctive Travels and the Paths of Rhythm",
       "year": "1990",
       "id": 3
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Misfits_-_American_Psycho_cover.jpg/220px-Misfits_-_American_Psycho_cover.jpg",
       "artist": "The Misfits",
       "album": "American Psycho",
       "year": "1997",
       "id": 4
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/en/8/8a/Mmfood.jpg",
       "artist": "MF DOOM",
       "album": "MM..FOOD(Deluxe Edition)",
       "year": "2004",
       "id": 5
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/en/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg",
       "artist": "Led Zeppelin",
       "album": "Led Zeppelin IV",
       "year": "1971",
       "id": 6
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/en/0/0a/Nude_%26_Rude_-_The_Best_of_Iggy_Pop_cover.jpg",
       "artist": "Iggy Pop",
       "album": "Nude & Rude: The Best of Iggy Pop",
       "year": "1996",
       "id": 7
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/en/a/ae/Haim_-_Days_Are_Gone.png",
       "artist": "HAIM",
       "album": "Days Are Gone",
       "year": "2013",
       "id": 8
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Starttodaygorillabiscuits.jpg/220px-Starttodaygorillabiscuits.jpg",
       "artist": "Gorilla Biscuits",
       "album": "Start Today",
       "year": "1989",
       "id": 9
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/en/b/b8/CureDisintegration.jpg",
       "artist": "The Cure",
       "album": "Disintegration",
       "year": "1989",
@@ -62,6 +72,7 @@
     },
     {
       "id": 11,
+      "image": "https://upload.wikimedia.org/wikipedia/en/7/77/Icky_Mettle_cover.jpg",
       "artist": "Archers of Loaf",
       "album": "Icky Mettle",
       "year": "1993"
