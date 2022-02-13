@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AlbumCard from './AlbumCard';
 
-const ListAlbums = ({ albums, onClickAlbum, selectAlbum }) => {
+const ListAlbums = ({ albums }) => {
+    const [selectedAlbum, setSelectedAlbum] = useState(null);
+
+    const selectAlbum = albums.find(album => album.id == selectedAlbum);
+
+    const handleClick = (e) => {
+        setSelectedAlbum(e.target.value);
+    }
+
     const albumCards = albums.map(album => 
         <AlbumCard 
-            key={ album.id }
-            onClick={() => onClickAlbum(album.id)} 
-            album={ selectAlbum } 
+            key={ album.id } 
+            album={ album }
+            onClick={ handleClick } 
         >
           { album.artist}
         </AlbumCard>

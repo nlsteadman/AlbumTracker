@@ -1,16 +1,18 @@
 import React from 'react';
 
-const AlbumCard = ({ album }) => {
-  return (
-    <button>
-        <div id="album-info">
+const AlbumCard = ({ album, onClick }) => {
+    if ( album ) {
+      return (
+      <div id="album-info">
+        <button>
           <img src={album.image} alt={album.album} />
-          <h2>{album.artist}</h2> 
-          <p>{album.album}</p>
-          <p>{album.year}</p>
-        </div>
-    </button>
-  )
+      </button>
+    </div>
+      )
+    }
+    else {
+      return <div>Loading...</div>
+    }
 };
 
 export default AlbumCard;

@@ -8,7 +8,7 @@ import { baseUrl } from './components/Globals';
 
 const App = () => {
   const [albums, setAlbums] = useState([]);
-  const [selectedAlbum, setSelectedAlbum] = useState(null);
+  
 
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -20,7 +20,7 @@ const App = () => {
     fetchAlbums();
   }, []);
 
-  const selectAlbum = albums.find(album => album.id == selectedAlbum);
+  
 
   const addNewAlbum = (newAlbum) => {
     const updatedAlbums = [...albums, newAlbum]
@@ -32,7 +32,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/albums" element={<ListAlbums albums={albums} onClickAlbum={setSelectedAlbum} selectAlbum={selectAlbum} />} />
+        <Route path="/albums" element={<ListAlbums albums={albums} />} />
         <Route path="/albums/new" element={<NewAlbum addNewAlbum={addNewAlbum} />} />
       </Routes>
     </Router>
