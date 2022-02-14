@@ -10,12 +10,14 @@
     "@mui/styled-engine-sc": "^5.4.1",
     "chokidar": "^3.5.3",
     "core-js": "^3.21.0",
+    "core-js-compat": "^3.21.0",
     "fsevents": "^2.3.2",
     "glob-parent": "^6.0.2",
     "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.26.0",
+    "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.0",
     "styled-components": "^5.3.3",
@@ -43,8 +45,11 @@
     ]
   },
   "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "eslint": "^8.8.0",
-    "webpack": "^4.42.0",
+    "html-webpack-plugin": "^4.5.2",
+    "react-refresh": "^0.11.0",
+    "webpack": "^5.2.0",
     "webpack-cli": "^4.9.2"
   }
 }

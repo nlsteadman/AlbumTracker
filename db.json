@@ -76,6 +76,13 @@
       "artist": "Archers of Loaf",
       "album": "Icky Mettle",
       "year": "1993"
+    },
+    {
+      "id": 12,
+      "image": "https://upload.wikimedia.org/wikipedia/en/9/98/SSPU_Carnavas.jpg",
+      "artist": "Silversun Pickups",
+      "album": "Carnavas",
+      "year": "2006"
     }
   ]
 }

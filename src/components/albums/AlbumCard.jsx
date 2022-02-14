@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AlbumInfo from "./AlbumInfo";
 
-const AlbumCard = ({ album, onClick }) => {
-    if ( album ) {
-      return (
-      <div id="album-info">
-        <button>
-          <img src={album.image} alt={album.album} />
-      </button>
-    </div>
-      )
-    }
-    else {
-      return <div>Loading...</div>
-    }
+const AlbumCard = ({ album }) => {
+  const [visibleDetails, setVisibleDetails] = useState(false);
+
+  const handleClick = () => {
+    setVisibleDetails(!visibleDetails)
+  }
+
+  return (
+  <div key={album.id} id="album-info">
+      <img onClick={handleClick} src={album.image} alt={album.album} />
+      { visibleDetails ? <AlbumInfo album={album} /> : ""}
+  </div>
+  )
 };
 
 export default AlbumCard;
