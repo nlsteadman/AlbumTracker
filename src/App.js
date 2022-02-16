@@ -11,16 +11,10 @@ const App = () => {
   
 
   useEffect(() => {
-    const fetchAlbums = async () => {
-      const response = await fetch(baseUrl + '/albums')
-      const data = await response.json();
-      setAlbums(data);
-    }
-
-    fetchAlbums();
+    fetch(baseUrl + '/albums')
+      .then(r => r.json())
+      .then(data => setAlbums(data))
   }, []);
-
-  
 
   const addNewAlbum = (newAlbum) => {
     const updatedAlbums = [...albums, newAlbum]
