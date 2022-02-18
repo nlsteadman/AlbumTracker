@@ -19,7 +19,6 @@ const NewAlbum = ({ addNewAlbum }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        e.target.reset();
         fetch(baseUrl + "/albums", {
             method: "POST",
             headers,
