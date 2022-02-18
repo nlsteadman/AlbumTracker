@@ -4,7 +4,6 @@ Features
 * List Albums /albums
 * Home Page /
 * Display Album /albums/:id
-* Favorite Albums /albums/favorite
 
 MVP
 ---
