@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import SearchAlbum from '../albums/SearchAlbum';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   const classes = useStyles();
 
   return (
@@ -32,6 +33,7 @@ const Navbar = () => {
             </Typography>
             <Button color="inherit" component={ Link } to="/albums">List Albums</Button>
             <Button color="inherit" component={ Link } to="/albums/new">Create Albums</Button>
+            <SearchAlbum onSearch={onSearch} />
             </Toolbar>
         </Container>
       </AppBar>

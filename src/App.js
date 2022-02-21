@@ -8,25 +8,30 @@ import { baseUrl } from './components/Globals';
 
 const App = () => {
   const [albums, setAlbums] = useState([]);
+  const [search, setSearch] = useState("");
   
-
   useEffect(() => {
     fetch(baseUrl + '/albums')
       .then(r => r.json())
       .then(data => setAlbums(data))
   }, []);
 
+
   const addNewAlbum = (newAlbum) => {
     const updatedAlbums = [...albums, newAlbum]
     setAlbums(updatedAlbums)
   }
 
+  const handleSearch = (newSearch) => {
+    setSearch(newSearch)
+  }
+
   return (
     <Router>
-      <Navbar />
+      <Navbar onSearch={handleSearch}/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/albums" element={<ListAlbums albums={albums} />} />
+        <Route path="/albums" element={<ListAlbums albums={albums} search={search} />} />
         <Route path="/albums/new" element={<NewAlbum addNewAlbum={addNewAlbum} />} />
       </Routes>
     </Router>
