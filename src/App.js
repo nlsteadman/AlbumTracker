@@ -8,6 +8,7 @@ import { baseUrl } from './components/Globals';
 
 const App = () => {
   const [albums, setAlbums] = useState([]);
+  const [sortBy, setSortBy] = useState("")
   
   useEffect(() => {
     fetch(baseUrl + '/albums')
@@ -21,12 +22,20 @@ const App = () => {
     setAlbums(updatedAlbums)
   }
 
+  const sortAlbums = [...albums].sort((album1, album2) => {
+    if (sortBy === "Alphabetically") {
+      return album1.artist.localeCompare(album2.artist)
+    } else {
+      {albums}
+    }
+  })
+
   return (
     <Router>
-      <Navbar />
+      <Navbar sortBy={sortBy} onChangeSort={setSortBy}/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/albums" element={<ListAlbums albums={albums} />} />
+        <Route path="/albums" element={<ListAlbums albums={sortAlbums} />} />
         <Route path="/albums/new" element={<NewAlbum addNewAlbum={addNewAlbum} />} />
       </Routes>
     </Router>

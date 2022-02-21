@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import AppBar from '@material-ui/core/AppBar';
@@ -19,8 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = () => {
+const Navbar = ({ sortBy, onChangeSort }) => {
+  const [sortOn, setSortOn] = useState("false");
   const classes = useStyles();
+
+  const handleSort = (e) => {
+    onChangeSort(e.target.value)
+  }
 
   return (
     <div className={classes.root}>
@@ -32,6 +37,17 @@ const Navbar = () => {
             </Typography>
             <Button color="inherit" component={ Link } to="/albums">List Albums</Button>
             <Button color="inherit" component={ Link } to="/albums/new">Create Albums</Button>
+            <p>Sort:</p>
+            <label>
+              <input
+                type="radio"
+                value="Alphabetically"
+                name="sort"
+                checked={sortBy === "Alphabetically"}
+                onChange={handleSort}
+              />
+            Alphabetically
+            </label>
             </Toolbar>
         </Container>
       </AppBar>
