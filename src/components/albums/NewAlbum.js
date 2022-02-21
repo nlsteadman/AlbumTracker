@@ -31,7 +31,7 @@ const NewAlbum = ({ addNewAlbum }) => {
 
   return <div>
       <h1>New Album</h1>
-        <form id="create-album-form" onSubmit={handleSubmit}>
+        <form id="create-album-form" onSubmit={handleSubmit} >
           <input value={state.artist} onChange={handleChange} type="text" name="artist" placeholder="Artist name" />
           <input value={state.album} onChange={handleChange} type="text" name="album" placeholder="Album name" />
           <input value={state.year} onChange={handleChange} type="text" name="year" placeholder="Year" />
