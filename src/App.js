@@ -8,7 +8,6 @@ import { baseUrl } from './components/Globals';
 
 const App = () => {
   const [albums, setAlbums] = useState([]);
-  const [sortBy, setSortBy] = useState(false)
   
   useEffect(() => {
     fetch(baseUrl + '/albums')
@@ -22,24 +21,9 @@ const App = () => {
     setAlbums(updatedAlbums)
   }
 
-  const sortAlbums = (e) =>  {
-    setSortBy(!sortBy)
-
-    if (e.target.checked) {
-      let sortedAlbums = albums.slice().sort((a, b) => {
-        if(a.artist < b.artist) return -1
-        if(a.artist > b.artist) return 1
-        return 0
-      })
-      setAlbums(sortedAlbums)
-    } else {
-      setAlbums(albums)
-    }
-  }
-
   return (
     <Router>
-      <Navbar onSort={sortAlbums}/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/albums" element={<ListAlbums albums={albums} />} />

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = ({ onSort }) => {
+const Navbar = () => {
   const classes = useStyles();
 
   return (
@@ -32,15 +32,6 @@ const Navbar = ({ onSort }) => {
             </Typography>
             <Button color="inherit" component={ Link } to="/albums">List Albums</Button>
             <Button color="inherit" component={ Link } to="/albums/new">Create Albums</Button>
-            <p>Sort:</p>
-            <label>
-              <input
-                type="checkbox"
-                name="sort"
-                onClick={onSort}
-              />
-            Alphabetically
-            </label>
             </Toolbar>
         </Container>
       </AppBar>
