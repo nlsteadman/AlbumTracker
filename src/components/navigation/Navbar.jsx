@@ -36,7 +36,6 @@ const Navbar = ({ onSort }) => {
             <label>
               <input
                 type="checkbox"
-                value="Alphabetically"
                 name="sort"
                 onClick={onSort}
               />
