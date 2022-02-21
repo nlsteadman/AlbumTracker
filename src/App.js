@@ -21,12 +21,17 @@ const App = () => {
     setAlbums(updatedAlbums)
   }
 
+  const deleteAlbum = (id) => {
+    const updatedAlbumArray = albums.filter((album) => album.id !== id)
+    setAlbums(updatedAlbumArray);
+  }
+
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/albums" element={<ListAlbums albums={albums} />} />
+        <Route path="/albums" element={<ListAlbums albums={albums} onDelete={deleteAlbum} />} />
         <Route path="/albums/new" element={<NewAlbum addNewAlbum={addNewAlbum} />} />
       </Routes>
     </Router>
