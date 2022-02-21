@@ -8,7 +8,6 @@ import { baseUrl } from './components/Globals';
 
 const App = () => {
   const [albums, setAlbums] = useState([]);
-  const [search, setSearch] = useState("");
   
   useEffect(() => {
     fetch(baseUrl + '/albums')
@@ -22,16 +21,12 @@ const App = () => {
     setAlbums(updatedAlbums)
   }
 
-  const handleSearch = (newSearch) => {
-    setSearch(newSearch)
-  }
-
   return (
     <Router>
-      <Navbar onSearch={handleSearch}/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/albums" element={<ListAlbums albums={albums} search={search} />} />
+        <Route path="/albums" element={<ListAlbums albums={albums} />} />
         <Route path="/albums/new" element={<NewAlbum addNewAlbum={addNewAlbum} />} />
       </Routes>
     </Router>

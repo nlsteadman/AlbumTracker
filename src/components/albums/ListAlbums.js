@@ -1,13 +1,9 @@
 import React from 'react';
 import AlbumCard from './AlbumCard';
 
-const ListAlbums = ({ albums, search }) => {
+const ListAlbums = ({ albums }) => {
 
-    const filteredAlbums = albums.filter((album) => {
-        return album.artist.toLowerCase().includes(search.toLowerCase())
-    })
-
-    const albumCards = filteredAlbums.map(album => 
+    const albumCards = albums.map(album => 
         <AlbumCard 
             key={ album.id } 
             album={ album }
