@@ -1,13 +1,12 @@
 import React from 'react';
 import AlbumCard from './AlbumCard';
 
-const ListAlbums = ({ albums, onDelete }) => {
+const ListAlbums = ({ albums }) => {
 
     const albumCards = albums.map(album => 
         <AlbumCard 
             key={ album.id } 
             album={ album }
-            onDelete={onDelete}
         />
     );
 
